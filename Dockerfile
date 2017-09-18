@@ -30,6 +30,8 @@ COPY requirements_all.txt requirements_all.txt
 # See PR #8103 for more info.
 RUN pip3 install --no-cache-dir -r requirements_all.txt && \
     pip3 install --no-cache-dir mysqlclient psycopg2 uvloop cchardet
+    curl -o /usr/local/bin/jq http://stedolan.github.io/jq/download/linux64/jq && \
+    chmod +x /usr/local/bin/jq
 
 # Copy source
 COPY . .
